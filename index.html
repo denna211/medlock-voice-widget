@@ -82,31 +82,9 @@
       margin-bottom: 32px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      margin-bottom: 8px;
-    }
-
-    .logo-text {
-      font-family: 'Poppins', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.5px;
-    }
-
-    .logo-text .lock-o {
-      color: var(--primary);
-      position: relative;
-    }
-
-    .tagline {
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-weight: 500;
+    .logo-img {
+      max-width: 280px;
+      height: auto;
     }
 
     /* Voice Widget Card */
@@ -143,14 +121,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100px;
+      min-height: 120px;
       margin-bottom: 24px;
+      position: relative;
     }
 
-    /* Style overrides for ElevenLabs widget */
-    elevenlabs-convai {
-      --elevenlabs-convai-widget-width: 80px;
-      --elevenlabs-convai-widget-height: 80px;
+    /* Hide the "Powered by ElevenLabs" text */
+    .widget-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 0;
     }
 
     .instructions {
@@ -286,8 +266,8 @@
         border-radius: 12px;
       }
 
-      .logo-text {
-        font-size: 28px;
+      .logo-img {
+        max-width: 220px;
       }
 
       .card-title {
@@ -374,10 +354,7 @@
 
   <div class="container">
     <header class="header">
-      <div class="logo">
-        <span class="logo-text">MedL<span class="lock-o">o</span>ck</span>
-      </div>
-      <p class="tagline">Compliant Packaging Solutions</p>
+      <img src="Logo_NEW_MedLock_TAG.png" alt="MedLock - Compliant Packaging Solutions" class="logo-img">
     </header>
 
     <main class="voice-card">
@@ -392,7 +369,9 @@
         </div>
         
         <!-- ElevenLabs Conversational AI Widget -->
-        <elevenlabs-convai agent-id="agent_6701kh255meefa4tm5e2f8adwaej"></elevenlabs-convai>
+        <div class="widget-wrapper">
+          <elevenlabs-convai agent-id="agent_6701kh255meefa4tm5e2f8adwaej"></elevenlabs-convai>
+        </div>
       </div>
 
       <!-- Fallback for errors -->
