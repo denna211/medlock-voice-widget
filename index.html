@@ -7,26 +7,27 @@
   <meta name="description" content="Speak directly with MedLock's packaging expert about compliant cannabis packaging solutions.">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="icon" type="image/png" href="https://www.med-lock.com/wp-content/uploads/2023/01/cropped-favicon-32x32.png">
   
-  <!-- Fonts -->
+  <!-- Fonts - Match MedLock site -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary: #1B5E20;
-      --primary-light: #2E7D32;
-      --primary-dark: #0D3B11;
-      --accent: #81C784;
-      --background: #0A0F0A;
-      --surface: #141A14;
-      --surface-elevated: #1C241C;
-      --text-primary: #FFFFFF;
-      --text-secondary: #A5D6A7;
-      --text-muted: #6B8E6B;
-      --border: #2E3D2E;
+      --primary: #0077B6;
+      --primary-dark: #005a8c;
+      --primary-light: #00a0dc;
+      --accent: #00B4D8;
+      --background: #ffffff;
+      --surface: #f8fafc;
+      --surface-elevated: #ffffff;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a5568;
+      --text-muted: #718096;
+      --border: #e2e8f0;
+      --shadow: rgba(0, 119, 182, 0.1);
     }
 
     * {
@@ -40,7 +41,7 @@
     }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--background);
       color: var(--text-primary);
       min-height: 100vh;
@@ -49,7 +50,7 @@
       overflow-x: hidden;
     }
 
-    /* Animated Background */
+    /* Subtle Background Pattern */
     .bg-pattern {
       position: fixed;
       top: 0;
@@ -57,23 +58,9 @@
       right: 0;
       bottom: 0;
       z-index: 0;
-      opacity: 0.4;
       background: 
-        radial-gradient(ellipse at 20% 20%, rgba(46, 125, 50, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(129, 199, 132, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(27, 94, 32, 0.05) 0%, transparent 70%);
-    }
-
-    .grain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        radial-gradient(ellipse at 0% 0%, rgba(0, 119, 182, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 100% 100%, rgba(0, 180, 216, 0.03) 0%, transparent 50%);
     }
 
     /* Main Container */
@@ -92,71 +79,63 @@
     /* Header */
     .header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
 
     .logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .logo-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
+      gap: 0;
+      margin-bottom: 8px;
     }
 
     .logo-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
       font-weight: 700;
+      color: var(--text-primary);
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    }
+
+    .logo-text .lock-o {
+      color: var(--primary);
+      position: relative;
     }
 
     .tagline {
-      font-size: 16px;
-      color: var(--text-muted);
+      font-size: 14px;
+      color: var(--text-secondary);
       font-weight: 500;
     }
 
     /* Voice Widget Card */
     .voice-card {
-      background: var(--surface);
+      background: var(--surface-elevated);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 48px;
-      max-width: 420px;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 400px;
       width: 100%;
       text-align: center;
       box-shadow: 
-        0 4px 24px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        0 4px 6px -1px var(--shadow),
+        0 2px 4px -1px var(--shadow);
     }
 
     .card-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
       font-weight: 600;
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
 
     .card-subtitle {
       color: var(--text-muted);
-      font-size: 15px;
-      margin-bottom: 32px;
-      line-height: 1.5;
+      font-size: 14px;
+      margin-bottom: 28px;
+      line-height: 1.6;
     }
 
     /* ElevenLabs Widget Container */
@@ -164,52 +143,54 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 120px;
+      min-height: 100px;
       margin-bottom: 24px;
     }
 
     /* Style overrides for ElevenLabs widget */
     elevenlabs-convai {
-      --elevenlabs-convai-widget-width: 100px;
-      --elevenlabs-convai-widget-height: 100px;
+      --elevenlabs-convai-widget-width: 80px;
+      --elevenlabs-convai-widget-height: 80px;
     }
 
     .instructions {
-      background: var(--surface-elevated);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 24px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
     }
 
     .instructions-title {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--primary);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .instructions-title svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--accent);
+      width: 14px;
+      height: 14px;
+      fill: var(--primary);
     }
 
     .instructions-list {
       list-style: none;
       text-align: left;
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 13px;
+      color: var(--text-secondary);
     }
 
     .instructions-list li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 10px;
       margin-bottom: 8px;
     }
 
@@ -233,13 +214,13 @@
 
     /* Info Section */
     .info-section {
-      margin-top: 32px;
-      padding-top: 24px;
+      margin-top: 24px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
     }
 
     .info-title {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
@@ -258,48 +239,65 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-secondary);
+      font-weight: 500;
     }
 
     .info-item svg {
       width: 16px;
       height: 16px;
-      fill: var(--primary-light);
+      fill: var(--primary);
     }
 
     /* Footer */
     .footer {
       text-align: center;
-      padding: 24px;
+      padding: 20px;
       color: var(--text-muted);
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .footer a {
-      color: var(--text-secondary);
+      color: var(--primary);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s ease;
     }
 
     .footer a:hover {
-      color: var(--accent);
+      color: var(--primary-dark);
+    }
+
+    .footer-tagline {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     /* Mobile Responsive */
     @media (max-width: 480px) {
+      .container {
+        padding: 16px;
+      }
+
       .voice-card {
-        padding: 32px 24px;
-        border-radius: 20px;
+        padding: 28px 20px;
+        border-radius: 12px;
+      }
+
+      .logo-text {
+        font-size: 28px;
       }
 
       .card-title {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .info-items {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
       }
     }
 
@@ -310,12 +308,12 @@
       align-items: center;
       gap: 12px;
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .loading-spinner {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border: 3px solid var(--border);
       border-top-color: var(--primary);
       border-radius: 50%;
@@ -329,7 +327,7 @@
     /* Fallback Button */
     .fallback-message {
       display: none;
-      background: var(--surface-elevated);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px;
@@ -341,9 +339,9 @@
     }
 
     .fallback-message p {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .phone-button {
@@ -361,7 +359,7 @@
     }
 
     .phone-button:hover {
-      background: var(--primary-light);
+      background: var(--primary-dark);
     }
 
     .phone-button svg {
@@ -373,15 +371,13 @@
 </head>
 <body>
   <div class="bg-pattern"></div>
-  <div class="grain"></div>
 
   <div class="container">
     <header class="header">
       <div class="logo">
-        <div class="logo-icon">🌿</div>
-        <span class="logo-text">MedLock</span>
+        <span class="logo-text">MedL<span class="lock-o">o</span>ck</span>
       </div>
-      <p class="tagline">Compliant Cannabis Packaging Solutions</p>
+      <p class="tagline">Compliant Packaging Solutions</p>
     </header>
 
     <main class="voice-card">
@@ -442,7 +438,7 @@
             ACMPR Compliant
           </div>
           <div class="info-item">
-            <svg viewBox="0 0 24 24"><path d="M17 8l-1.41 1.41L17.17 11H9v2h8.17l-1.58 1.58L17 16l4-4-4-4zM5 5h7V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z"/></svg>
             Custom Branding
           </div>
         </div>
@@ -454,7 +450,7 @@
         <a href="https://www.med-lock.com" target="_blank">www.med-lock.com</a> · 
         <a href="tel:1-877-263-2153">1-877-263-2153</a>
       </p>
-      <p style="margin-top: 8px;">Secure. Compliant. Trusted.</p>
+      <p class="footer-tagline">A Division of LiquiMedLock Inc.</p>
     </footer>
   </div>
 
