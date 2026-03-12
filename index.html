@@ -112,7 +112,7 @@
     .card-subtitle {
       color: var(--text-muted);
       font-size: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
 
@@ -359,29 +359,10 @@
 
     <main class="voice-card">
       <h1 class="card-title">Talk to Our Expert</h1>
-      <p class="card-subtitle">Click the button below to speak with our AI packaging consultant about child-resistant jars, tubes, pouches, and more.</p>
+      <p class="card-subtitle">Start a conversation by clicking the phone button on the bottom right corner of this page and speak to our packaging consultant about child-resistant jars, tubes, pouches, and more.</p>
 
-      <!-- ElevenLabs Widget -->
-      <div class="widget-container" id="widgetContainer">
-        <div class="loading" id="loadingState">
-          <div class="loading-spinner"></div>
-          <span>Loading voice assistant...</span>
-        </div>
-        
-        <!-- ElevenLabs Conversational AI Widget -->
-        <div class="widget-wrapper">
-          <elevenlabs-convai agent-id="agent_6701kh255meefa4tm5e2f8adwaej"></elevenlabs-convai>
-        </div>
-      </div>
-
-      <!-- Fallback for errors -->
-      <div class="fallback-message" id="fallbackMessage">
-        <p>Having trouble connecting? Call us directly:</p>
-        <a href="tel:1-877-263-2153" class="phone-button">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          1-877-263-2153
-        </a>
-      </div>
+      <!-- ElevenLabs Widget (appears as floating button at bottom right) -->
+      <elevenlabs-convai agent-id="agent_6701kh255meefa4tm5e2f8adwaej"></elevenlabs-convai>
 
       <!-- Instructions -->
       <div class="instructions">
@@ -392,7 +373,7 @@
         <ol class="instructions-list">
           <li>
             <span class="number">1</span>
-            <span>Click the microphone button above</span>
+            <span>Click the phone button at the bottom right corner</span>
           </li>
           <li>
             <span class="number">2</span>
@@ -437,38 +418,10 @@
   <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
   <script>
-    // Hide loading state once widget loads
-    const loadingState = document.getElementById('loadingState');
-    const fallbackMessage = document.getElementById('fallbackMessage');
-
-    // Check if widget loaded successfully
-    let widgetLoaded = false;
-
-    // Wait for ElevenLabs widget to load
-    const checkWidget = setInterval(() => {
-      const widget = document.querySelector('elevenlabs-convai');
-      if (widget && widget.shadowRoot) {
-        widgetLoaded = true;
-        loadingState.style.display = 'none';
-        clearInterval(checkWidget);
-      }
-    }, 500);
-
-    // Timeout fallback after 10 seconds
-    setTimeout(() => {
-      if (!widgetLoaded) {
-        loadingState.style.display = 'none';
-        fallbackMessage.classList.add('visible');
-        clearInterval(checkWidget);
-      }
-    }, 10000);
-
-    // Log any errors
+    // ElevenLabs widget loads automatically as floating button
     window.addEventListener('error', (e) => {
       if (e.message && e.message.includes('elevenlabs')) {
         console.error('ElevenLabs widget error:', e);
-        loadingState.style.display = 'none';
-        fallbackMessage.classList.add('visible');
       }
     });
   </script>
